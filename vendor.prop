@@ -1,0 +1,10 @@
+# Crypto
+ro.crypto.dm_default_key.options_format.version=2
+ro.crypto.volume.metadata.method=dm-default-key
+ro.crypto.allow_encrypt_override=true
+
+# Gatekeeper
+vendor.gatekeeper.disable_spu=true
+
+# USB
+vendor.usb.use_ffs_mtp=1
