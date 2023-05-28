@@ -1,3 +1,17 @@
+#
+# Copyright (c) 2020 Microsoft Corporation
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 2 as published by
+# the Free Software Foundation.
+#
+ARCH=arm64
+#BRANCH=surfaceduo-msm-4.14
+CROSS_COMPILE=aarch64-linux-android-
+CROSS_COMPILE_ARM32=arm-linux-androideabi-
+DEFCONFIG=vendor/surfaceduo_defconfig
+EXTRA_CMDS=''
+
 LD_LIBRARY_PATH=${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH
 
@@ -12,12 +26,12 @@ TOOL_ARGS+=("REAL_CC=${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/bin/cla
 CLANG_TRIPLE=aarch64-linux-gnu-
 LINUX_GCC_CROSS_COMPILE_PREBUILTS_BIN=prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin
 LINUX_GCC_CROSS_COMPILE_ARM32_PREBUILTS_BIN=prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin
-LZ4_PREBUILTS_BIN=prebuilts/misc/linux-x86/lz4
-DTC_PREBUILTS_BIN=prebuilts/misc/linux-x86/dtc
-LIBUFDT_PREBUILTS_BIN=prebuilts/misc/linux-x86/libufdt
-DTC_EXT=${ROOT_DIR}/prebuilts/misc/linux-x86/dtc/dtc
+LZ4_PREBUILTS_BIN=prebuilts-master/misc/linux-x86/lz4
+DTC_PREBUILTS_BIN=prebuilts-master/misc/linux-x86/dtc
+LIBUFDT_PREBUILTS_BIN=prebuilts-master/misc/linux-x86/libufdt
+DTC_EXT=${ROOT_DIR}/prebuilts-master/misc/linux-x86/dtc/dtc
 export DTC_EXT
-DTC_OVERLAY_TEST_EXT=${ROOT_DIR}/prebuilts/misc/linux-x86/libufdt/ufdt_apply_overlay
+DTC_OVERLAY_TEST_EXT=${ROOT_DIR}/prebuilts-master/misc/linux-x86/libufdt/ufdt_apply_overlay
 export DTC_OVERLAY_TEST_EXT
 
 FILES="
