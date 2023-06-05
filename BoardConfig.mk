@@ -85,6 +85,11 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=0
 BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
 
+HOST_ARCH := x86_64
+HOST_OS := linux
+HOST_BUILD_TYPE := release
+HOST_PREFIX := ${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/bin/clang
+
 #TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 #TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 #BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
