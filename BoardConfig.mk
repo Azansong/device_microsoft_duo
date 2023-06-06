@@ -88,7 +88,19 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=0
 BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
 
-TARGET_EXTRA_BOOT_KERNEL_ARGS += "TOOL_ARGS= HOSTCC=${ROOT_DIR}/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-gcc HOSTAR=${ROOT_DIR}/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-ar HOSTLD=${ROOT_DIR}/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-ld HOSTCFLAGS=-I${ROOT_DIR}/kernel/msm-surface/include/uapi -I/usr/include -I/usr/include/x86_64-linux-gnu  -L/usr/lib -L/usr/lib/x86_64-linux-gnu HOSTLDFLAGS=-L/usr/lib -L/usr/lib/x86_64-linux-gnu REAL_CC=${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/bin/clang"
+HOSTCC := $(PWD)/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-gcc
+HOSTAR := $(PWD)/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-ar
+HOSTLD := $(PWD)/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-ld
+HOSTCFLAGS := -I$(PWD)/kernel/msm-surface/include/uapi -I/usr/include -I/usr/include/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu
+HOSTLDFLAGS := -L/usr/lib -L/usr/lib/x86_64-linux-gnu
+
+TOOL_ARGS += \
+        "HOSTCC=$(HOSTCC)" \
+        "HOSTAR=$(HOSTAR)" \
+        "HOSTLD=$(HOSTLD)" \
+        "HOSTCFLAGS=$(HOSTCFLAGS)" \
+        "HOSTLDFLAGS=$(HOSTLDFLAGS)" \
+        "REAL_CC=${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/bin/clang"
 
 #TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 #TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
