@@ -102,7 +102,7 @@ TOOL_ARGS += \
         "HOSTLDFLAGS=$(HOSTLDFLAGS)" \
         "REAL_CC=${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/bin/clang"
 
-#TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
+#TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Kernel
 #TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 #BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
