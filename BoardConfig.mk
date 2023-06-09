@@ -137,6 +137,8 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TW_OVERRIDE_SYSTEM_PROPS := \
+    "ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
