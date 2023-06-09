@@ -36,6 +36,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a9
 # Assert
 TARGET_OTA_ASSERT_DEVICE := duo
 
+#Display
+TARGET_SCREEN_DENSITY := 401
+
 # A/B
 AB_OTA_UPDATER := true
 
