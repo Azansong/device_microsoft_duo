@@ -59,6 +59,7 @@ TARGET_KERNEL_ARCH := $(TARGET_ARCH)
 TARGET_KERNEL_HEADER_ARCH := $(TARGET_ARCH)
 TARGET_CROSS_COMPILE=aarch64-linux-android-
 TARGET_CROSS_COMPILE_ARM32=arm-linux-androideabi-
+TARGET_CLANG_TRIPLE=aarch64-linux-gnu-
 TARGET_KERNEL_CONFIG := vendor/surfaceduo-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/msm-4.14
 
