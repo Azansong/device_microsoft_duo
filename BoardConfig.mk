@@ -57,11 +57,6 @@ AB_OTA_PARTITIONS := \
 TARGET_NO_KERNEL := false
 TARGET_KERNEL_ARCH := $(TARGET_ARCH)
 TARGET_KERNEL_HEADER_ARCH := $(TARGET_ARCH)
-TARGET_CROSS_COMPILE=aarch64-linux-android-
-TARGET_CROSS_COMPILE_ARM32=arm-linux-androideabi-
-TARGET_CLANG_TRIPLE=aarch64-linux-gnu-
-TARGET_KERNEL_CONFIG := vendor/surfaceduo-perf_defconfig
-TARGET_KERNEL_SOURCE := kernel/msm-4.14
 
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
@@ -90,20 +85,6 @@ BOARD_KERNEL_CMDLINE += pcie_ports=compat
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=0
 BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
-
-HOSTCC := ${ROOT_DIR}/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-gcc
-HOSTAR := ${ROOT_DIR}/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-ar
-HOSTLD := ${ROOT_DIR}/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-ld
-HOSTCFLAGS := -I${ROOT_DIR}/kernel/msm-surface/include/uapi -I/usr/include -I/usr/include/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu
-HOSTLDFLAGS := -L/usr/lib -L/usr/lib/x86_64-linux-gnu
-
-TOOL_ARGS += \
-        "HOSTCC=$(HOSTCC)" \
-        "HOSTAR=$(HOSTAR)" \
-        "HOSTLD=$(HOSTLD)" \
-        "HOSTCFLAGS=$(HOSTCFLAGS)" \
-        "HOSTLDFLAGS=$(HOSTLDFLAGS)" \
-        "REAL_CC=${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/bin/clang"
 
 #TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Kernel
 #TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
@@ -135,7 +116,6 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery
 BOARD_USES_RECOVERY_AS_BOOT := true
-BUILD_BROKEN_USES_BUILD_HOST_EXECUTABLE := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
