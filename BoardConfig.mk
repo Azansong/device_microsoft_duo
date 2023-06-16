@@ -101,6 +101,7 @@ TARGET_USES_SQ_CLANG := true
 
 # Set path to your Snapdragon LLVM Clang toolchain
 TARGET_SQ_CLANG_TOOLCHAIN_PREFIX := ${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/bin/clang
+TARGET_LLVM_CLANG_AOSP_LINKER_FLAGS += -Wl,-rpath-link,${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/lib:$LD_LIBRARY_PATH
 
 TARGET_PREBUILT_DTC := ${ROOT_DIR}/prebuilts/misc/linux-x86/dtc/dtc
 
