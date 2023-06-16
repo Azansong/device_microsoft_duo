@@ -91,6 +91,12 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=0
 BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
 
+# Use Snapdragon LLVM clang compiler
+TARGET_USES_SQ_CLANG := true
+
+# Set path to your Snapdragon LLVM Clang toolchain
+TARGET_SQ_CLANG_TOOLCHAIN_PREFIX := ${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/bin/clang
+
 #TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Kernel
 #TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 #BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
