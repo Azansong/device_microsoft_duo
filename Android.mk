@@ -16,6 +16,14 @@
 
 LOCAL_PATH := $(call my-dir)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := dtc
+LOCAL_SRC_FILES := ${ROOT_DIR}/prebuilts/misc/linux-x86/dtc/dtc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_PATH := $(TARGET_OUT_EXECUTABLES)/dtc_intermediates
+include $(BUILD_PREBUILT)
+
 ifeq ($(TARGET_DEVICE), duo)
 subdir_makefiles=$(call first-makefiles-under,$(LOCAL_PATH))
 $(foreach mk,$(subdir_makefiles),$(info including $(mk) ...)$(eval include $(mk)))
