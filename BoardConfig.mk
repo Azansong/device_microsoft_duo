@@ -101,6 +101,9 @@ TARGET_KERNEL_USE_CUSTOM_TOOLCHAIN := true
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := ${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/bin/clang
 TARGET_LD_SHIM_LIBS += $(call host-path,${ROOT_DIR}/proprietary/llvm-arm-toolchain-ship/8.0/lib)
 
+#Use the prebuilt DTC tool
+TARGET_PREBUILT_DTC := $(LOCAL_PATH)/Android.mk
+
 #TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Kernel
 #TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 #BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
