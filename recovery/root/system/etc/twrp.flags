@@ -18,3 +18,6 @@
 /dsp            emmc    /dev/block/bootdevice/by-name/dsp                          flags=backup=1;subpartitionof=/modem;slotselect
 /sftpfw         emmc    /dev/block/bootdevice/by-name/sftpfw                       flags=backup=1;subpartitionof=/vendor;slotselect
 /sfpd           emmc    /dev/block/bootdevice/by-name/sfpd                         flags=backup=1;subpartitionof=/vendor;slotselect
+
+# Removable storage
+/usbotg         vfat    /devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto*      flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable
